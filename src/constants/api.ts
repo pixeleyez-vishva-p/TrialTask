@@ -40,8 +40,8 @@ export const MOCK_CONFIG = {
 // Image URLs
 export const IMAGE_URLS = {
   PICSUM_BASE: 'https://picsum.photos',
-  ITEM_IMAGE: (id: number, width = 300, height = 200) => 
+  ITEM_IMAGE: (id: number, width = 300, height = 200) =>
     `${IMAGE_URLS.PICSUM_BASE}/${width}/${height}?random=${id}`,
-  DETAIL_IMAGE: (id: number, width = 400, height = 300) => 
+  DETAIL_IMAGE: (id: number, width = 400, height = 300) =>
     `${IMAGE_URLS.PICSUM_BASE}/${width}/${height}?random=${id}`,
 } as const;

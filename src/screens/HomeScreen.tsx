@@ -12,7 +12,6 @@ import {
 } from '../store/itemsSlice';
 import { ItemCard } from '../components/ItemCard';
 import { ItemCardSkeleton } from '../components/ItemCardSkeleton';
-import { CustomButton } from '../components/CustomButton';
 import { useToast } from '../hooks/useToast';
 import { Colors } from '../constants';
 
@@ -61,8 +60,6 @@ export const HomeScreen: React.FC<Props> = ({ navigation }) => {
       ))}
     </View>
   );
-
-
 
   if (isLoading && items.length === 0) {
     return (
