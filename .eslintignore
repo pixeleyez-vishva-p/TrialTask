@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+android/
+ios/
+dist/
+build/
+
+# Config files
+*.config.js
+babel.config.js
+metro.config.js
+
+# Generated files
+coverage/
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
