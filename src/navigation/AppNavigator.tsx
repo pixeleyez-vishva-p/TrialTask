@@ -10,6 +10,7 @@ import {
 } from '../store/authSlice';
 import { LoginScreen } from '../screens/LoginScreen';
 import { HomeScreen } from '../screens/HomeScreen';
+import { DetailScreen } from '../screens/DetailScreen';
 import { SplashScreen } from '../components/SplashScreen';
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -40,8 +41,22 @@ export const AppNavigator: React.FC = () => {
         }}
       >
         {isAuthenticated ? (
-          // User is logged in, show Home screen
-          <Stack.Screen name='Home' component={HomeScreen} />
+          // User is logged in, show authenticated screens
+          <>
+            <Stack.Screen name='Home' component={HomeScreen} />
+            <Stack.Screen
+              name='Detail'
+              component={DetailScreen}
+              options={{
+                headerShown: true,
+                title: 'Feed Details',
+                headerStyle: {
+                  backgroundColor: '#f8f9fa',
+                },
+                headerTintColor: '#333',
+              }}
+            />
+          </>
         ) : (
           // User is not logged in, show Login screen
           <Stack.Screen name='Login' component={LoginScreen} />
