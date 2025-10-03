@@ -10,8 +10,10 @@ import {
   selectItemsError,
   clearError,
 } from '../store/itemsSlice';
+import { logoutUser } from '../store/authSlice';
 import { ItemCard } from '../components/ItemCard';
 import { ItemCardSkeleton } from '../components/ItemCardSkeleton';
+import { CustomButton } from '../components/CustomButton';
 import { useToast } from '../hooks/useToast';
 import { Colors } from '../constants';
 
@@ -26,7 +28,7 @@ export const HomeScreen: React.FC<Props> = ({ navigation }) => {
   const items = useAppSelector(selectItems);
   const isLoading = useAppSelector(selectItemsLoading);
   const error = useAppSelector(selectItemsError);
-  const { showError } = useToast();
+  const { showError, showSuccess } = useToast();
 
   useEffect(() => {
     // Fetch items when component mounts
@@ -49,6 +51,14 @@ export const HomeScreen: React.FC<Props> = ({ navigation }) => {
     dispatch(fetchItems());
   };
 
+  const handleLogout = async () => {
+    try {
+      await dispatch(logoutUser()).unwrap();
+    } catch {
+      showError('Logout failed. Please try again.');
+    }
+  };
+
   const renderItem = ({ item }: { item: Item }) => (
     <ItemCard item={item} onPress={handleItemPress} />
   );
@@ -66,6 +76,13 @@ export const HomeScreen: React.FC<Props> = ({ navigation }) => {
       <View style={styles.container}>
         <View style={styles.header}>
           <Text style={styles.title}>Feeds</Text>
+          <CustomButton
+            title='Logout'
+            onPress={handleLogout}
+            variant='outline'
+            size='small'
+            style={styles.logoutButton}
+          />
         </View>
         {renderSkeletonList()}
       </View>
@@ -76,6 +93,13 @@ export const HomeScreen: React.FC<Props> = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>Feeds</Text>
+        <CustomButton
+          title='Logout'
+          onPress={handleLogout}
+          variant='outline'
+          size='small'
+          style={styles.logoutButton}
+        />
       </View>
 
       <FlatList
@@ -103,6 +127,9 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.background,
   },
   header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     padding: 20,
     backgroundColor: Colors.white,
     borderBottomWidth: 1,
@@ -113,6 +140,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: Colors.textPrimary,
     marginBottom: 4,
+    flex: 1,
+  },
+  logoutButton: {
+    marginLeft: 16,
   },
   listContainer: {
     padding: 20,
