@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+android/
+ios/
+dist/
+build/
+
+# Generated files
+coverage/
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Package files
+package-lock.json
+yarn.lock
+
+# Config files that should not be formatted
+*.config.js
+babel.config.js
+metro.config.js
+
+# Documentation that might have specific formatting
+CHANGELOG.md
