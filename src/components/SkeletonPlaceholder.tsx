@@ -23,7 +23,7 @@ export const SkeletonPlaceholder: React.FC<SkeletonPlaceholderProps> = ({
       backgroundColor={Colors.lightGray}
       highlightColor={Colors.white}
       speed={1200}
-      direction="right"
+      direction='right'
       shimmerWidth={0.6}
     >
       {children || (

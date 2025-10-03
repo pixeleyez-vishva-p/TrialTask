@@ -1,97 +1,347 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# TrialTask - React Native E-commerce App
 
-# Getting Started
+A modern React Native e-commerce application built with TypeScript, Redux Toolkit, and comprehensive testing.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## 🚀 Features
 
-## Step 1: Start Metro
+- **Modern UI Components** - Custom reusable components with consistent design
+- **State Management** - Redux Toolkit for efficient state management
+- **Type Safety** - Full TypeScript support throughout the application
+- **Navigation** - React Navigation for seamless screen transitions
+- **Authentication** - Complete auth flow with login/logout functionality
+- **Product Catalog** - Browse and view product details with ratings
+- **Loading States** - Skeleton placeholders for better UX
+- **Toast Notifications** - User feedback for actions
+- **Comprehensive Testing** - 124+ unit tests with Jest and React Testing Library
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## 📱 Screens
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+- **Splash Screen** - App loading screen
+- **Login Screen** - User authentication
+- **Home Screen** - Product catalog with search and filtering
+- **Detail Screen** - Individual product details
 
-```sh
-# Using npm
-npm start
+## 🛠 Tech Stack
 
-# OR using Yarn
+- **React Native** 0.81.4
+- **TypeScript** 5.8.3
+- **Redux Toolkit** 2.9.0
+- **React Navigation** 7.x
+- **React Hook Form** 7.63.0
+- **Yup** 1.7.1 (validation)
+- **Jest** 29.6.3 (testing)
+- **React Testing Library** (testing)
+
+## 📋 Prerequisites
+
+Before running this project, make sure you have the following installed:
+
+- **Node.js** (>= 20.0.0)
+- **Yarn** (recommended) or **npm**
+- **React Native CLI**
+- **Android Studio** (for Android development)
+- **Xcode** (for iOS development, macOS only)
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone <repository-url>
+cd TrialTask
+```
+
+### 2. Install Dependencies
+
+```bash
+yarn install
+```
+
+### 3. iOS Setup (macOS only)
+
+```bash
+cd ios && pod install && cd ..
+```
+
+### 4. Start Metro Bundler
+
+```bash
 yarn start
 ```
 
-## Step 2: Build and run your app
+### 5. Run the App
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
+#### Android
+```bash
 yarn android
 ```
 
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
+#### iOS
+```bash
 yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## 🧪 Testing
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+This project includes comprehensive unit testing with Jest and React Testing Library.
 
-## Step 3: Modify your app
+### Running Tests
 
-Now that you have successfully run the app, let's make changes!
+```bash
+# Run all tests
+yarn test
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+# Run tests in watch mode
+yarn test --watch
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+# Run tests with coverage
+yarn test --coverage
+```
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+### Test Coverage
 
-## Congratulations! :tada:
+- **124 tests** across 7 test suites
+- **100% test pass rate**
+- **Comprehensive component testing** including:
+  - CustomButton (20+ tests)
+  - CustomInput (20+ tests)
+  - ItemCard (25+ tests)
+  - SkeletonPlaceholder (15+ tests)
+  - ItemCardSkeleton (15+ tests)
+  - SplashScreen (10+ tests)
 
-You've successfully run and modified your React Native App. :partying_face:
+### Test Structure
 
-### Now what?
+```
+src/components/__tests__/
+├── CustomButton.test.tsx
+├── CustomInput.test.tsx
+├── ItemCard.test.tsx
+├── SkeletonPlaceholder.test.tsx
+├── ItemCardSkeleton.test.tsx
+└── SplashScreen.test.tsx
+```
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+## 🔧 Development Scripts
 
-# Troubleshooting
+```bash
+# Start development server
+yarn start
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+# Run on Android
+yarn android
 
-# Learn More
+# Run on iOS
+yarn ios
 
-To learn more about React Native, take a look at the following resources:
+# Run tests
+yarn test
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+# Run linting
+yarn lint
+
+# Fix linting issues
+yarn lint:fix
+
+# Format code
+yarn format
+
+# Check formatting
+yarn format:check
+
+# Type checking
+yarn type-check
+
+# Run all quality checks
+yarn check-all
+```
+
+## 📁 Project Structure
+
+```
+src/
+├── components/           # Reusable UI components
+│   ├── __tests__/       # Component tests
+│   ├── CustomButton.tsx
+│   ├── CustomInput.tsx
+│   ├── ItemCard.tsx
+│   ├── SkeletonPlaceholder.tsx
+│   ├── ItemCardSkeleton.tsx
+│   └── SplashScreen.tsx
+├── screens/             # App screens
+│   ├── HomeScreen.tsx
+│   ├── LoginScreen.tsx
+│   └── DetailScreen.tsx
+├── navigation/          # Navigation configuration
+│   └── AppNavigator.tsx
+├── store/              # Redux store and slices
+│   ├── authSlice.ts
+│   ├── itemsSlice.ts
+│   └── index.ts
+├── services/           # API services
+│   ├── apiService.ts
+│   └── authService.ts
+├── types/              # TypeScript type definitions
+│   ├── api.ts
+│   ├── screen.ts
+│   └── ui.ts
+├── constants/          # App constants
+│   ├── colors.ts
+│   └── api.ts
+├── hooks/              # Custom React hooks
+│   └── useToast.ts
+├── utils/              # Utility functions
+│   └── validation.ts
+└── setupTests.ts       # Jest test setup
+```
+
+## 🎨 Components
+
+### CustomButton
+A versatile button component with multiple variants, sizes, and states.
+
+**Props:**
+- `title: string` - Button text
+- `onPress: () => void` - Press handler
+- `loading?: boolean` - Loading state
+- `disabled?: boolean` - Disabled state
+- `variant?: 'primary' | 'secondary' | 'outline'` - Button style
+- `size?: 'small' | 'medium' | 'large'` - Button size
+
+### CustomInput
+A form input component with label, error handling, and validation.
+
+**Props:**
+- `label: string` - Input label
+- `error?: string` - Error message
+- `containerStyle?: ViewStyle` - Container styling
+- All standard TextInput props
+
+### ItemCard
+A product card component displaying item information.
+
+**Props:**
+- `item: Item` - Product data
+- `onPress: (item: Item) => void` - Press handler
+- `style?: ViewStyle` - Custom styling
+
+## 🔐 Authentication
+
+The app includes a complete authentication system with:
+
+- Login/logout functionality
+- Form validation with Yup
+- Error handling and user feedback
+- Secure token management
+- Redux state management
+
+## 📱 Navigation
+
+Built with React Navigation v7:
+
+- Stack navigation for main flow
+- Type-safe navigation with TypeScript
+- Screen parameter definitions
+- Navigation state management
+
+## 🎯 State Management
+
+Redux Toolkit is used for state management with:
+
+- **Auth Slice** - User authentication state
+- **Items Slice** - Product data and loading states
+- **Type-safe actions** and reducers
+- **Async thunks** for API calls
+
+## 🎨 Styling
+
+- **Consistent color scheme** defined in constants
+- **Responsive design** for different screen sizes
+- **Custom component styling** with StyleSheet
+- **Theme-based colors** for maintainability
+
+## 🚀 Performance
+
+- **Optimized rendering** with proper React patterns
+- **Efficient state updates** with Redux Toolkit
+- **Lazy loading** for better performance
+- **Memory leak prevention** in components
+
+## 🧪 Testing Strategy
+
+### Unit Testing
+- **Component testing** with React Testing Library
+- **User-centric testing** approach
+- **Comprehensive coverage** of all components
+- **Mock external dependencies**
+
+### Test Categories
+- **Rendering tests** - Component renders correctly
+- **Interaction tests** - User interactions work
+- **Props tests** - Props are handled correctly
+- **State tests** - Component state changes
+- **Accessibility tests** - A11y compliance
+- **Edge cases** - Error handling and boundary conditions
+
+## 📦 Dependencies
+
+### Production Dependencies
+- React Native 0.81.4
+- React 19.1.0
+- Redux Toolkit 2.9.0
+- React Navigation 7.x
+- React Hook Form 7.63.0
+- Yup 1.7.1
+
+### Development Dependencies
+- TypeScript 5.8.3
+- Jest 29.6.3
+- React Testing Library
+- ESLint & Prettier
+- React Native CLI
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+1. **Metro bundler issues**
+   ```bash
+   npx react-native start --reset-cache
+   ```
+
+2. **iOS build issues**
+   ```bash
+   cd ios && pod install && cd ..
+   ```
+
+3. **Android build issues**
+   ```bash
+   cd android && ./gradlew clean && cd ..
+   ```
+
+4. **Test failures**
+   ```bash
+   yarn test --clearCache
+   ```
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests for new functionality
+5. Ensure all tests pass
+6. Run linting and formatting
+7. Submit a pull request
+
+## 📞 Support
+
+For support or questions, please open an issue in the repository.
+
+---
+
+**Happy Coding! 🚀**
