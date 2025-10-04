@@ -1,6 +1,6 @@
 module.exports = {
   preset: 'react-native',
-  setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
+  setupFilesAfterEnv: ['<rootDir>/src/setup-tests.ts'],
   testEnvironment: 'jsdom',
   transformIgnorePatterns: [
     'node_modules/(?!(react-native|@react-native|@react-navigation|react-native-skeleton-placeholder|react-native-vector-icons|react-native-toast-message|react-native-linear-gradient|react-native-safe-area-context|react-native-screens|react-native-gesture-handler|@react-native-masked-view|@react-native-async-storage|@reduxjs/toolkit|react-redux)/)',

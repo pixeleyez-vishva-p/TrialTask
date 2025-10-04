@@ -8,8 +8,9 @@ import ReactTestRenderer from 'react-test-renderer';
 // Mock the entire App component to avoid yup validation issues
 jest.mock('../App', () => {
   return function MockApp() {
-    const { createElement } = require('react');
-    return createElement('View', { testID: 'app' }, 'Mock App');
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const React = require('react');
+    return React.createElement('View', { testID: 'app' }, 'Mock App');
   };
 });
 
