@@ -3,5 +3,5 @@
  * Centralized location for all application constants
  */
 
-export { Colors, type ColorKey } from './colors';
+export { Colors } from './colors';
 export * from './api';

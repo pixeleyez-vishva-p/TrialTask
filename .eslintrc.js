@@ -1,12 +1,14 @@
 module.exports = {
   root: true,
   extends: [
-    '@react-native',
+    'eslint:recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
+    'plugin:@typescript-eslint/recommended',
     'prettier',
   ],
-  plugins: ['react', 'react-hooks', 'prettier'],
+  plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -38,10 +40,12 @@ module.exports = {
     'prefer-const': 'error',
     'no-var': 'error',
     'no-unused-vars': 'off', // TypeScript handles this
+    '@typescript-eslint/no-unused-vars': 'error',
   },
   env: {
     es6: true,
     node: true,
+    jest: true,
   },
   ignorePatterns: [
     'node_modules/',

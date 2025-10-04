@@ -1,0 +1,1 @@
+export { SkeletonPlaceholder } from './SkeletonPlaceholder';
